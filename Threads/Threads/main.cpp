@@ -3,7 +3,7 @@
 #include <Windows.h>
 
 LRESULT WINAPI WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-//º¯ÊıÃüÃû
+//å‡½æ•°å‘½å
 DWORD WINAPI ThreadProcOne(LPVOID lpParameter);
 DWORD WINAPI ThreadProcTwo(LPVOID lpParameter);
 DWORD WINAPI ThreadProcThree(LPVOID lpParameter);
@@ -16,6 +16,9 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	LPSTR     lpCmdLine,
 	int       nCmdShow)
 {
+	
+	
+	//è¿™é‡Œé¢åªæ˜¯ æˆ‘å‡†å¤‡æ·»åŠ çš„ä¸€ä¸ª æµ‹è¯•çš„ä¸€è¡Œ ç”¨äºå’Œå…¶ä»–äººä¸€èµ·åˆå¹¶çš„æˆ‘çš„é¡¹ç›®çš„æµ‹è¯•
 	// TODO: Place code here.
 	WNDCLASS wc = { 0 };
 	wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
@@ -83,7 +86,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		InvalidateRect(hWnd, NULL, TRUE);
 		DWORD lpParameter[5] = { 0 };
 
-		//Í¬Ê±´´½¨5¸öÏß³Ì
+		//åŒæ—¶åˆ›å»º5ä¸ªçº¿ç¨‹
 		CloseHandle(CreateThread(NULL, 0, ThreadProcOne, (LPVOID)hWnd, 0, &lpParameter[0]));
 		CloseHandle(CreateThread(NULL, 0, ThreadProcTwo, (LPVOID)hWnd, 0, &lpParameter[1]));
 		CloseHandle(CreateThread(NULL, 0, ThreadProcThree, (LPVOID)hWnd, 0, &lpParameter[2]));
@@ -97,7 +100,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-//»­ºáÏß
+//ç”»æ¨ªçº¿
 DWORD WINAPI ThreadProcOne(LPVOID lpParameter)
 {
 	HWND hWnd = (HWND)lpParameter;
@@ -130,7 +133,7 @@ DWORD WINAPI ThreadProcOne(LPVOID lpParameter)
 }
 
 
-//»­ÊúÏß
+//ç”»ç«–çº¿
 DWORD WINAPI ThreadProcTwo(LPVOID lpParameter)
 {
 	HWND hWnd = (HWND)lpParameter;
@@ -166,7 +169,7 @@ DWORD WINAPI ThreadProcTwo(LPVOID lpParameter)
 }
 
 
-//»­¾ØĞÎ
+//ç”»çŸ©å½¢
 DWORD WINAPI ThreadProcThree(LPVOID lpParameter)
 {
 	HWND hWnd = (HWND)lpParameter;
@@ -219,7 +222,7 @@ DWORD WINAPI ThreadProcThree(LPVOID lpParameter)
 }
 
 
-//»­µÈ±ßÈı½ÇĞÎ
+//ç”»ç­‰è¾¹ä¸‰è§’å½¢
 DWORD WINAPI ThreadProcFour(LPVOID lpParameter)
 {
 	HWND hWnd = (HWND)lpParameter;
@@ -239,7 +242,7 @@ DWORD WINAPI ThreadProcFour(LPVOID lpParameter)
 		int t = 0;
 		for (double t = 0; t <= (nWide / 2); t++)
 		{
-			SetPixel(hdc, (int)(nX1 + t), (int)(nY_B - (sqrt(3))*t), RGB(65, 105, 225));    //sqrt(3)   -->double   ¾«¶È
+			SetPixel(hdc, (int)(nX1 + t), (int)(nY_B - (sqrt(3))*t), RGB(65, 105, 225));    //sqrt(3)   -->double   ç²¾åº¦
 			Sleep(0.9);
 		}
 
@@ -270,7 +273,7 @@ DWORD WINAPI ThreadProcFour(LPVOID lpParameter)
 
 
 
-//»­Ô²
+//ç”»åœ†
 DWORD WINAPI ThreadProcFive(LPVOID lpParameter)
 {
 	HWND hWnd = (HWND)lpParameter;
